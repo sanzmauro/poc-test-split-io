@@ -51,9 +51,9 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
 
-before_fork { Rails.configuration.split_factory.stop! }
+# before_fork { Rails.configuration.split_factory.stop! }
 
-on_worker_boot { Rails.configuration.split_factory.resume! }
+# on_worker_boot { Rails.configuration.split_factory.resume! }
 
 # experimental puma cluster mode flags
 # https://github.com/puma/puma/blob/1840014e77c9c0b2e9e094135396c25dd3c1df52/5.0-Upgrade.md
